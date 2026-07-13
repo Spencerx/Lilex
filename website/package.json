@@ -14,6 +14,7 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "0.9.9",
+		"@astrojs/sitemap": "^3.7.3",
 		"astro": "6.4.6",
 		"astro-typograf": "3.3.0",
 		"fast-glob": "3.3.3",

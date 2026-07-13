@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 import { fileLinker } from "./file-linker.mjs";
 import { featureCollector } from "./feature-collector.mjs";
 import typograf from "astro-typograf";
@@ -8,7 +9,11 @@ const BUILD_DIR = "../build";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://lilex.myrt.co",
   integrations: [
+    sitemap({
+      filter: (page) => !page.includes("/preview/"),
+    }),
     fileLinker(
       [
         `${BUILD_DIR}/LilexDuo/webfonts/LilexDuo\\[wght\\].woff2`,
