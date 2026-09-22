@@ -5,6 +5,7 @@ REPORTS_DIR := reports
 SCRIPTS_DIR := scripts
 SOURCE_DIR := sources
 WEBSITE_DIR := website
+NPM_PACKAGE_DIR := package
 
 # Internal build variables
 PYTHON_VERSION := 3.13
@@ -75,6 +76,10 @@ build-nerd: ## build Lilex Nerd font
 release: build ## release the font
 	@rm -rf $(RELEASE_DIR)
 	@cp -r $(BUILD_DIR) $(RELEASE_DIR)
+
+.PHONY: npm-package
+npm-package:
+	@cp -r $(RELEASE_DIR)/* $(NPM_PACKAGE_DIR)/
 
 define build-font
 	@rm -rf $(BUILD_DIR)/$(1)

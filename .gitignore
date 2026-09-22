@@ -14,6 +14,8 @@ __pycache__
 .netlify
 /build/
 /reports/
+/package/Lilex*
+.build/
 
 # gftools build artifacts
 /sources/instance_ufos
